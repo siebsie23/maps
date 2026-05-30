@@ -31,7 +31,7 @@ of <a href="https://github.com/cerus/packet-maps">packet-maps</a>.</p>
 • Advanced engine features
 like [alpha compositing](https://en.wikipedia.org/wiki/Alpha_compositing) ([Image](https://cerus.dev/img/maps_alpha_composition.png))\
 • Efficient click handling\
-• Supports 1.16.5 - 1.21.11
+• Supports 1.16.5 - 1.21.11 and 26.1.2
 
 **What is the point of the plugin module?**\
 See [FAQ](#FAQ)
@@ -139,7 +139,7 @@ public class MyPlugin extends JavaPlugin {
 
 ### Building
 
-Requirements: Java 21, Git, Maven, CraftBukkit 1.16.5, 1.17.1, 1.18.1, 1.18.2, 1.19.1, 1.19.3, 1.19.4, 1.20, 1.20.2, 1.20.4, 1.20.6 and 1.21 installed in local
+Requirements: Java 25 (the 26.1.2 CraftBukkit jar is compiled for Java 25, so the build JDK must be 25+), Git, Maven, CraftBukkit 1.16.5, 1.17.1, 1.18.1, 1.18.2, 1.19.1, 1.19.3, 1.19.4, 1.20, 1.20.2, 1.20.4, 1.20.6, 1.21 and 26.1.2 installed in local
 Maven repo
 
 Simply clone the repository, navigate into the directory and run `mvn clean package`. The plugin will be in `plugin/target` and the api

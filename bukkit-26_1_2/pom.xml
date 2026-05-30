@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dev.cerus.maps</groupId>
+        <artifactId>parent</artifactId>
+        <version>3.8.16</version>
+    </parent>
+
+    <name>${parent.artifactId}</name>
+    <artifactId>bukkit-26_1_2</artifactId>
+
+    <properties>
+        <!--
+          The 26.1.2 CraftBukkit jar is compiled for Java 25, so the build JDK must be 25+.
+          We emit Java 17 bytecode (the source only uses <=16 features) so the maven-shade-plugin
+          bundled with the plugin module can read these classes (its ASM cannot read class file
+          major version 69 / Java 25). An explicit maven-compiler-plugin <release> is used so the
+          target is honoured even when building through an IDE that overrides the module bytecode level.
+        -->
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>dev.cerus.maps</groupId>
+            <artifactId>common</artifactId>
+            <version>${parent.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>26.1.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>
