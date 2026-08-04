@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 public class VersionAdapterFactory {
 
     public static final String MIN_VER = "1.16.5";
-    public static final String MAX_VER = "26.1.2";
+    public static final String MAX_VER = "26.2";
 
     public VersionAdapter makeAdapter() {
         String version = Bukkit.getVersion();
@@ -32,6 +32,7 @@ public class VersionAdapterFactory {
             case "1.21.9", "1.21.10" -> new VersionAdapter21R6();
             case "1.21.11" -> new VersionAdapter21R7();
             case "26.1.2" -> new VersionAdapter26_1_2();
+            case "26.2" -> new VersionAdapter26_2();
             default -> null;
         };
     }
